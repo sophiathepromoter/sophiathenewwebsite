@@ -969,61 +969,58 @@ return true;
 
  }  
 </style>
-
 <style>
-    /* CSS styles for the popup dialog */
-    .popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: white;
-      padding: 20px;
-      border: 1px solid #ccc;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-      max-width: 90%;
-      width: 400px;
-      text-align: center;     
-    }
+  /* CSS styles for the popup dialog */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+  }
 
-    /* CSS styles for the close button */ 
-    #closeButton {
-      background-color: #879d52;
-      color: #fff;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-    }
+  /* CSS styles for the close button */
+  #closeButton {
+    background-color: #879d52;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
 
-    
-    .welcome{
-      color: #879d52;
-    }
-    .thankyou{
-      color: black;
-    }
+  .welcome {
+    color: #879d52;
+  }
 
-  </style>
+  .thankyou {
+    color: black;
+  }
+</style>
 
   <script>
-    window.onload = function() {
-      var popup = document.getElementById('popupDialog');
-      var closeButton = document.getElementById('closeButton');
-      var remainingTimes = 1;
+  window.onload = function() {
+    var popup = document.getElementById('popupDialog');
+    var closeButton = document.getElementById('closeButton');
+    var remainingTimes = 1;
 
-      // Show the popup dialog when the page loads
-      popup.style.display = 'block';
+    // Show the popup dialog when the page loads
+    popup.style.display = 'block';
 
-      // Close button click event handler
-      closeButton.onclick = function() {
-        if (remainingTimes > 0) {
-          popup.style.display = 'none';
-          remainingTimes--;
-          if (remainingTimes > 0) {
-            popup.style.display = 'block';
-          }
-        }
-      };
+    // Close button click event handler
+    closeButton.onclick = function() {
+      popup.style.display = 'none';
     };
-  </script>
+
+    // Automatically hide the popup after 3 seconds
+    setTimeout(function() {
+      popup.style.display = 'none';
+    }, 1000);
+  };
+</script>
