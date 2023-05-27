@@ -682,7 +682,7 @@ I would recommend her anyday ...she is the best in her industry</p>
   });
 
   function sendMessage(name, mobile, email, message) {
-    var botToken = '6031687053:AAEzZ1dy3Z0Lxg4tl0VXm0a9NT2HJ_vpGog';
+   var botToken = process.env.TELEGRAM_BOT_TOKEN;
     var chatId = '@sophiathepromoter';
     var text = `Name: ${name.replace(/\n/g, '%0A')}
                 Mobile: ${mobile.replace(/\n/g, '%0A')}
